@@ -1,4 +1,6 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
+
 import './Header.css'
 
 function Header() {
@@ -9,16 +11,7 @@ function Header() {
 					<Link to="/">Webshop Mania</Link>
 				</div>
 				
-				<nav>
-					<ul>
-						<li><NavLink to="/">Home</NavLink></li>
-						<li><NavLink to="/category/tennis">Tennis</NavLink></li>
-						<li><NavLink to="/category/football">Football</NavLink></li>
-						<li><NavLink to="/category/shoes">Shoes</NavLink></li>
-						<li><NavLink to="/category/pants">Pants</NavLink></li>
-						<li><NavLink to="/about">About</NavLink></li>
-					</ul>
-				</nav>
+				<Navbar />
 			</div>
 		</header>
 	);

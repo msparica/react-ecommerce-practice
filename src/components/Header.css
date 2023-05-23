@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
 
+header {
+
+}
+
 .header-content {
 	width: 80%;
 	margin: 0 auto;
@@ -14,25 +18,3 @@
 	color: rgba(255, 255, 255, 0.87);
 }
 
-.header-content nav ul {
-	margin: 0;
-	padding-top: 10px;
-}
-
-.header-content nav li {
-	display: inline-block;
-	font-size: 24px;
-	margin: 0 7px 0 7px;
-}
-
-.header-content nav li a {
-	color: rgba(255, 255, 255, 0.87);
-}
-.header-content nav li a.active {
-	color: rgba(150, 255, 150, 0.87);
-}
-
-.header-content nav li a:hover {
-	color: rgba(150, 255, 150, 0.87);
-	text-decoration: underline;
-}

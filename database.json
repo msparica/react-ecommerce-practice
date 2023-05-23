@@ -1,0 +1,27 @@
+{
+	"articles": [		
+		{ "name": "Taylormade M4 4H, 5H, 6-PW Combo Steel Shaft Iron Set", "imageUrl": "https://academy.scene7.com/is/image/academy/20689675?$pdp-gallery-ng$", "sport": "golf", "type": "gear", "price": 144.00 }, 
+		{ "name": "TaylorMade Distance Golf Balls 12-Pack", "imageUrl": "https://academy.scene7.com/is/image/academy/20594398?$pdp-gallery-ng$", "sport": "golf", "type": "gear", "price": 59.00 }, 
+		{ "name": "Nike Men's Victory Blade Golf Polo Shirt", "imageUrl": "https://academy.scene7.com/is/image/academy/20793648?$pdp-gallery-ng$", "sport": "golf", "type": "shirt", "price": 141.00 }, 
+		{ "name": "Callaway Men's Pro Spin Shorts 9 in", "imageUrl": "https://academy.scene7.com/is/image/academy/21052808?$pdp-gallery-ng$", "sport": "golf", "type": "pants", "price": 191.00 }, 
+		{ "name": "Nike Men's Roshe G 20 Golf Shoes", "imageUrl": "https://academy.scene7.com/is/image/academy/20406431?$pdp-gallery-ng$", "sport": "golf", "type": "shoes", "price": 167.00 }, 
+
+		{ "name": "adidas Starlancer Package Soccer Ball", "imageUrl": "https://academy.scene7.com/is/image/academy/21031508?$pdp-gallery-ng$", "sport": "soccer", "type": "gear", "price": 116.00 }, 
+		{ "name": "adidas Tiro Club Jr Goalie Gloves", "imageUrl": "https://academy.scene7.com/is/image/academy/21043327?$pdp-gallery-ng$", "sport": "soccer", "type": "gear", "price": 186.00 }, 
+		{ "name": "adidas Men's Tiro Training Jersey", "imageUrl": "https://academy.scene7.com/is/image/academy/20651341?$pdp-gallery-ng$", "sport": "soccer", "type": "shirt", "price": 111.00 }, 
+		{ "name": "BCG Boys' Training Soccer Shorts", "imageUrl": "https://academy.scene7.com/is/image/academy/20228843?$pdp-gallery-ng$", "sport": "soccer", "type": "pants", "price": 145.00 }, 
+		{ "name": "Brava Soccer Girls' Racer III Soccer Cleats", "imageUrl": "https://academy.scene7.com/is/image/academy/20965334?$pdp-gallery-ng$", "sport": "soccer", "type": "shoes", "price": 38.00 }, 
+
+		{ "name": "Wilson NCAA Reaction Football", "imageUrl": "https://academy.scene7.com/is/image/academy///sports/balls/brown_wf3006701idof/5878749a6a7a4b81a983ffd3e7c3987a?$pdp-gallery-ng$", "sport": "football", "type": "gear", "price": 71.00 }, 
+		{ "name": "Riddell Youth Victor Football Helmet", "imageUrl": "https://academy.scene7.com/is/image/academy/10639064?$pdp-gallery-ng$", "sport": "football", "type": "gear", "price": 163.00 }, 
+		{ "name": "Schutt Men's Pro Cut Varsity Practice Jersey", "imageUrl": "https://academy.scene7.com/is/image/academy/20295543?$pdp-gallery-ng$", "sport": "football", "type": "shirt", "price": 20.00 }, 
+		{ "name": "Schutt Men's ProTech Tri All-In-One Football Girdle", "imageUrl": "https://academy.scene7.com/is/image/academy/20135271?$pdp-gallery-ng$", "sport": "football", "type": "pants", "price": 190.00 }, 
+		{ "name": "Nike Men's Alpha Menace 3 Shark Football Cleats", "imageUrl": "https://academy.scene7.com/is/image/academy/21062169?$pdp-gallery-ng$", "sport": "football", "type": "shoes", "price": 98.00 }, 
+		
+		{ "name": "Wilson NBA DRV Q3 2021 Outdoor Basketball", "imageUrl": "https://academy.scene7.com/is/image/academy/20689515?$pdp-gallery-ng$", "sport": "basketball", "type": "gear", "price": 76.00 }, 
+		{ "name": "Silverback 60 in Inground Tempered-Glass Basketball Hoop", "imageUrl": "https://academy.scene7.com/is/image/academy/10732910?$pdp-gallery-ng$", "sport": "basketball", "type": "gear", "price": 138.00 }, 
+		{ "name": "Under Armour Men's Baseline Cotton Tank Top", "imageUrl": "https://academy.scene7.com/is/image/academy/21013947?$pdp-gallery-ng$", "sport": "basketball", "type": "shirt", "price": 46.00 }, 
+		{ "name": "BCG Men's Diamond Mesh Basketball Shorts 9 in", "imageUrl": "https://academy.scene7.com/is/image/academy/20792681?$pdp-gallery-ng$", "sport": "basketball", "type": "pants", "price": 109.00 }, 
+		{ "name": "https://academy.scene7.com/is/image/academy/20981108?$pdp-gallery-ng$", "imageUrl": "https://academy.scene7.com/is/image/academy/20981108?$pdp-gallery-ng$", "sport": "basketball", "type": "shoes", "price": 89.00 }
+	]
+}
