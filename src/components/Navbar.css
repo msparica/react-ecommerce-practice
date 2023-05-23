@@ -12,7 +12,8 @@ nav > ul > li {
 }
 nav .subitems li {
 	display: block;
-	min-width: 100px;
+	min-width: 150px;
+	text-align: center;
 }
 
 nav li {
@@ -36,4 +37,10 @@ nav li a:hover {
 	background-color: rgba(150, 255, 150, 0.47);
 	position: absolute;
 	top: 100%;
+}
+
+nav ul svg {
+    width: 0.7em;
+    position: relative;
+    top: 0.15em;
 }
