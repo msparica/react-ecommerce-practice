@@ -1,7 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-import './Navbar.css'
 import { useCallback, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+
+import './Navbar.css'
 
 type MenuItem = {
 	text: string;
@@ -49,8 +50,8 @@ function NavItem({ item }: { item: MenuItem }) {
 	return (
 		<li onFocus={() => setActive(true)} onBlur={onBlur}>
 			{ item.to 
-				? (<NavLink to={item.to}>{item.text}</NavLink>)
-				: (<Link to="#">{item.text} { active ? <FaChevronUp /> : <FaChevronDown /> }</Link>)
+				? <NavLink to={item.to}>{item.text}</NavLink>
+				: <Link to="#">{item.text} {active ? <FaChevronUp /> : <FaChevronDown />}</Link>
 			}
 			{
 				item.items &&
