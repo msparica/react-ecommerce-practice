@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css';
 
 import HomePage from "./pages/HomePage";
-import CategoryPage from "./pages/CategoryPage";
+import CategoryPage, { loader as categoryLoader } from "./pages/CategoryPage";
 import AboutPage from "./pages/AboutPage";
 import Layout from "./Layout";
 
@@ -14,10 +14,11 @@ const router = createBrowserRouter([
 				path: "/", 
 				element: <HomePage /> 
 			}, { 
-				path: "/category/:category", 
-				element: <CategoryPage /> 
+				path: "/items/:filter/:filterVal",
+				element: <CategoryPage />,
+				loader: categoryLoader
 			}, { 
-				path: "/about", 
+				path: "/about",
 				element: <AboutPage /> 
 			},
 		]

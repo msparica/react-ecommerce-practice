@@ -1,7 +1,7 @@
 function AboutPage() {
 	return ( 
 		<section>
-			About Page
+			<h1>About Webshop Mania</h1>
 		</section>
 	);
 }

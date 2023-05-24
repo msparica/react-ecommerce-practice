@@ -14,16 +14,16 @@ function Navbar() {
 	const menuItems: MenuItem[] = [
 		{ text: 'Home', to: '/' },
 		{ text: "Type", items: [
-			{ text: 'Shirts', to: '/category/shirts'},
-			{ text: 'Pants', to: '/category/pants'},
-			{ text: 'Kicks', to: '/category/shoes'},
-			{ text: 'Gear', to: '/category/gear'},
+			{ text: 'Shirts', to: '/items/type/shirts'},
+			{ text: 'Pants', to: '/items/type/pants'},
+			{ text: 'Kicks', to: '/items/type/shoes'},
+			{ text: 'Gear', to: '/items/type/gear'},
 		]},
 		{ text: "Sports", items: [
-			{ text: 'B-Ball', to: '/category/basketball'},
-			{ text: 'Sucker', to: '/category/soccer'},
-			{ text: 'Eggball', to: '/category/football'},
-			{ text: 'Rich & Bored', to: '/category/golf'},
+			{ text: 'B-Ball', to: '/items/sport/basketball'},
+			{ text: 'Sucker', to: '/items/sport/soccer'},
+			{ text: 'Eggball', to: '/items/sport/football'},
+			{ text: 'Rich & Bored', to: '/items/sport/golf'},
 		]},
 		{ text: 'About', to: '/about' },
 	];
@@ -57,7 +57,7 @@ function NavItem({ item }: { item: MenuItem }) {
 				item.items &&
 				<div className="subitems" style={{ display: active ? 'block' : 'none ' }}>
 					<ul>
-						{item.items.map(i => <li><NavLink to={i.to ?? '#'}>{i.text}</NavLink></li>)}
+						{item.items.map(i => <li><NavLink to={i.to ?? '#'} onClick={() => setActive(false)}>{i.text}</NavLink></li>)}
 					</ul>
 				</div>
 			}

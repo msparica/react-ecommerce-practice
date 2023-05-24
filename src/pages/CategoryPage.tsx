@@ -1,11 +1,30 @@
-import { useParams } from "react-router-dom";
+import { LoaderFunction, redirect, useLoaderData } from "react-router-dom";
+import { Article, Category, getArticlesBySport, getArticlesByType, getCategoryData } from "../utils/data";
+
+
+export const loader = (async ({ params }) => {
+	const categoryData = await getCategoryData(params.filterVal as string);
+
+	if (categoryData.length === 0) {
+		return redirect('/');
+	}
+
+	const articles = params.filter === "type"
+		? await getArticlesByType(params.filterVal as string)
+		: await getArticlesBySport(params.filterVal as string);
+
+	return { categoryData: categoryData[0], articles };
+}) satisfies LoaderFunction;
 
 function CategoryPage() {
-	const { category } = useParams();
+	const { categoryData, articles } = useLoaderData() as { categoryData: Category, articles: Article[] };
 
 	return ( 
 		<section>
-			Category Page: <span>{category}</span>
+			<h1>{categoryData.title}</h1>
+			<h2>{categoryData.subtitle}</h2>
+			
+			{articles.map(i => <p>{i.name}</p>)}
 		</section>
 	);
 }
