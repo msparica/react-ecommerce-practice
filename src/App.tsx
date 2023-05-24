@@ -20,6 +20,9 @@ const router = createBrowserRouter([
 			}, { 
 				path: "/about",
 				element: <AboutPage /> 
+			}, { 
+				path: "/404",
+				element: <section><h1>Page not found</h1></section> 
 			},
 		]
 	}

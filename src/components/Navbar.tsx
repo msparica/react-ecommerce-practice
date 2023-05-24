@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useCallback, useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -51,7 +51,7 @@ function NavItem({ item }: { item: MenuItem }) {
 		<li onFocus={() => setActive(true)} onBlur={onBlur}>
 			{ item.to 
 				? <NavLink to={item.to}>{item.text}</NavLink>
-				: <Link to="#">{item.text} {active ? <FaChevronUp /> : <FaChevronDown />}</Link>
+				: <a href="javascript:void(0);">{item.text} {active ? <FaChevronUp /> : <FaChevronDown />}</a>
 			}
 			{
 				item.items &&

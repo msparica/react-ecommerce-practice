@@ -30,7 +30,7 @@
 		{ "id": "shoes", "title": "Shoes", "subtitle": "Best kicks in town" },
 		{ "id": "gear", "title": "Gear", "subtitle": "Sportsball accessories" },
 		{ "id": "basketball", "title": "Basketball", "subtitle": "Hoop da loop" },
-		{ "id": "soccer", "title": "Soccer", "subtitle": "Slight touch = .22LR in the knee" },
+		{ "id": "soccer", "title": "Soccer", "subtitle": "A slight touch is basically the same as a .22LR in the knee" },
 		{ "id": "football", "title": "Football", "subtitle": "Egg" },
 		{ "id": "golf", "title": "Golf", "subtitle": "The poors are being uppity again" }
 	]

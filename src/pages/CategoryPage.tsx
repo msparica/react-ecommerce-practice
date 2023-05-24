@@ -6,12 +6,14 @@ export const loader = (async ({ params }) => {
 	const categoryData = await getCategoryData(params.filterVal as string);
 
 	if (categoryData.length === 0) {
-		return redirect('/');
+		return redirect('/404');
 	}
 
 	const articles = params.filter === "type"
 		? await getArticlesByType(params.filterVal as string)
 		: await getArticlesBySport(params.filterVal as string);
+
+	// await new Promise(r => setTimeout(r, 1000));
 
 	return { categoryData: categoryData[0], articles };
 }) satisfies LoaderFunction;
