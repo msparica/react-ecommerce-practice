@@ -22,7 +22,7 @@ const router = createBrowserRouter([
 				element: <AboutPage /> 
 			}, { 
 				path: "/404",
-				element: <section><h1>Page not found</h1></section> 
+				element: <section><h2>Page not found</h2></section> 
 			},
 		]
 	}

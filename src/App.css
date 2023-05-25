@@ -2,5 +2,9 @@ main {
 	width: 1350px;
 	max-width: 90%;
 	margin: 0 auto;
-	min-height: 100px;
+	min-height: calc(100vh - 200px);
+}
+
+section h1, section h2, section h3 {
+	text-align: center;
 }

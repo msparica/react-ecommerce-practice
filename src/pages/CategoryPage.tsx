@@ -1,33 +1,47 @@
-import { LoaderFunction, redirect, useLoaderData } from "react-router-dom";
+import { Await, LoaderFunction, defer, redirect, useLoaderData, useNavigate } from "react-router-dom";
 import { Article, Category, getArticlesBySport, getArticlesByType, getCategoryData } from "../utils/data";
+import React from "react";
 
 
 export const loader = (async ({ params }) => {
-	const categoryData = await getCategoryData(params.filterVal as string);
+	const categoryPromise = getCategoryData(params.filterVal as string);
 
-	if (categoryData.length === 0) {
-		return redirect('/404');
-	}
+	const articlesPromise = params.filter === "type"
+		? getArticlesByType(params.filterVal as string)
+		: getArticlesBySport(params.filterVal as string);
 
-	const articles = params.filter === "type"
-		? await getArticlesByType(params.filterVal as string)
-		: await getArticlesBySport(params.filterVal as string);
+	const timeoutPromise = new Promise(r => setTimeout(r, 1000));
 
-	// await new Promise(r => setTimeout(r, 1000));
-
-	return { categoryData: categoryData[0], articles };
+	return defer({
+		data: Promise.all([ categoryPromise, articlesPromise, timeoutPromise])
+	})
 }) satisfies LoaderFunction;
 
 function CategoryPage() {
-	const { categoryData, articles } = useLoaderData() as { categoryData: Category, articles: Article[] };
-
+	const loaderData = useLoaderData() as { data: Promise<[Category, Article[], void]> };
+	const navigate = useNavigate();
 	return ( 
-		<section>
-			<h1>{categoryData.title}</h1>
-			<h2>{categoryData.subtitle}</h2>
-			
-			{articles.map(i => <p>{i.name}</p>)}
-		</section>
+		<React.Suspense fallback={ <section><h3>Loading category page...</h3></section>} >
+			<Await
+				resolve={loaderData.data}
+				errorElement={ <section><h3>Error loading package location!</h3></section> }
+			>
+				{(data: [Category[], Article[], void]) => {
+					const [categories, articles] = data;
+					
+					if (categories.length === 0) navigate('/404');
+
+					const [category] = categories;
+
+					return <section>
+						<h1>{category.title}</h1>
+						<h2>{category.subtitle}</h2>
+						
+						{articles.map(i => <p>{i.name}</p>)}
+					</section>
+				}}
+			</Await>
+		</React.Suspense>
 	);
 }
 
