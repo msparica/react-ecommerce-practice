@@ -1,4 +1,4 @@
-import { Await, LoaderFunction, defer, redirect, useLoaderData, useNavigate } from "react-router-dom";
+import { Await, LoaderFunction, defer, useLoaderData, useNavigate } from "react-router-dom";
 import { Article, Category, getArticlesBySport, getArticlesByType, getCategoryData } from "../utils/data";
 import React from "react";
 
@@ -10,23 +10,21 @@ export const loader = (async ({ params }) => {
 		? getArticlesByType(params.filterVal as string)
 		: getArticlesBySport(params.filterVal as string);
 
-	const timeoutPromise = new Promise(r => setTimeout(r, 1000));
-
 	return defer({
-		data: Promise.all([ categoryPromise, articlesPromise, timeoutPromise])
+		data: Promise.all([ categoryPromise, articlesPromise ])
 	})
 }) satisfies LoaderFunction;
 
 function CategoryPage() {
-	const loaderData = useLoaderData() as { data: Promise<[Category, Article[], void]> };
+	const loaderData = useLoaderData() as { data: Promise<[Category, Article[]]> };
 	const navigate = useNavigate();
 	return ( 
 		<React.Suspense fallback={ <section><h3>Loading category page...</h3></section>} >
 			<Await
 				resolve={loaderData.data}
-				errorElement={ <section><h3>Error loading package location!</h3></section> }
+				errorElement={ <section><h3>Error loading category page!</h3></section> }
 			>
-				{(data: [Category[], Article[], void]) => {
+				{(data: [Category[], Article[]]) => {
 					const [categories, articles] = data;
 					
 					if (categories.length === 0) navigate('/404');

@@ -1,5 +1,3 @@
-
-
 const apiBaseUrl = 'http://localhost:3001'
 
 type Article = {
@@ -29,7 +27,9 @@ async function getArticles(query?: string): Promise<Article[]> {
 		throw new Error(message);
 	}
 
-	return response.json() as Promise<Article[]>;
+	const data = await response.json();
+
+	return delayedData(data) as Promise<Article[]>;
 }
 
 async function getCategoryData(category: string): Promise<Category[]> {
@@ -40,7 +40,16 @@ async function getCategoryData(category: string): Promise<Category[]> {
 		throw new Error(message);
 	}
 
-	return response.json() as Promise<Category[]>;
+	const data = await response.json();
+
+	return delayedData(data) as Promise<Category[]>;
+}
+
+async function delayedData<T>(data: T): Promise<T> {
+	const dataLength = JSON.stringify(data).length;
+	await new Promise(res => setTimeout(res, dataLength * 0.7))
+	console.log(data);
+	return data;
 }
 
 export { 
